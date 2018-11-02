@@ -20,6 +20,9 @@ body {
 .contacts {
     border-right: 1px solid #b4b4b4;
 }
+span.menu-item {
+    display: none;
+}
 .details {
     text-align: center;
     padding-top: 30px;
@@ -76,14 +79,22 @@ ul.contact-details > li {
 .avatar img {
     width: 100%;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
     .left-col {
         width: 100%;
+        min-height: auto;
     }
     .contacts {
         border: none;
     }
+    /*#contacts {
+        display: none;
+    }*/
     .right-col {
         width: 100%;
     }
+    /*span.menu-item {
+        display: inline;
+        cursor: pointer;
+    }*/
 }

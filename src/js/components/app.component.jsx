@@ -1,23 +1,25 @@
 import * as React from 'react';
 
-import ExampleContainer from "../containers/example.container";
 import {ExampleService} from "../services/example.service";
 import {DateOfBirth} from "../services/dateofbirth.js";
+import {contactDetails} from "../state/actions";
+import {connect} from 'react-redux';
 
 
 export class AppComponent extends React.Component {
 
-    constructor() {
-        super();
-    }
-
     componentDidMount() {
         ExampleService.getContacts()
             .then((data) => {
-                console.log("componentDidMount", data.data.contactList);
                 this.contacts = data.data.contactList;
                 this.setState(this.contacts[0]);
+                //store.dispatch(contactDetails(this.contacts[0]));
         });
+    }
+
+    contactClicked(contact) {
+        this.setState(contact);
+        //store.dispatch(contactDetails(contact));
     }
 
     render() {
@@ -26,13 +28,13 @@ export class AppComponent extends React.Component {
                 <div className="left-col">
                     <div className="contacts">
                         <div className="headline">
-                            Contact book
+                            Contact book {/*}<span className="menu-item">&#9776;</span>*/}
                         </div>
                         <div id="contacts">
                             <ul className="contacts-list">
                                 {this.contacts ? this.contacts.map(contact => <li
                                     className={this.state && this.state.name == contact.name ? "active" : ""}
-                                    onClick={() => this.setState(contact)}>{contact.name}</li>) : ""}
+                                    onClick={() => this.contactClicked(contact)}>{contact.name}</li>) : ""}
                             </ul>
                         </div>
                     </div>

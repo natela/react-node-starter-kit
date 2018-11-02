@@ -1,9 +1,8 @@
-export const EXAMPLE_DATA_AVAILABLE = 'EXAMPLE_DATA_AVAILABLE';
+export const CONTACT_DETAILS = "CONTACT_DETAILS"
 
-export function exampleDataAvailable(data) {
+export function contactDetails(data) {
     return {
-        type: EXAMPLE_DATA_AVAILABLE,
-        data: data
+        type: CONTACT_DETAILS,
+        details: data
     }
 }
-

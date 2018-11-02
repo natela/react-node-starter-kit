@@ -1,14 +1,14 @@
-import {EXAMPLE_DATA_AVAILABLE} from '../actions';
+import {CONTACT_DETAILS} from '../actions';
 
 let initialState = initAppState();
 
 const appState = (state = initialState, action) => {
     let newState;
     switch (action.type) {
-        case EXAMPLE_DATA_AVAILABLE:
+        case CONTACT_DETAILS:
             newState = {
-                ... state,
-                exampleMessage: action.data.exampleMessage
+                ...state,
+                details: action.details
             };
             break;
         default:
@@ -19,7 +19,7 @@ const appState = (state = initialState, action) => {
 
 function initAppState() {
     const emptyState = {
-        exampleMessage: 'No data loaded, empty state',
+        details: {}
     };
 
     initialState = {
