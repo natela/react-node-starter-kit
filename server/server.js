@@ -5,10 +5,16 @@ const express = require('express'),
 
 app.use('/', express.static(path.join(__dirname, '../dist/')));
 
-router.route('/api/example')
+const FILE_PATH = 'server/contacts.json';
+
+router.route('/api/contacts')
 	.get((req, res) => {
-		let exampleMessage = { exampleMessage: 'Example API request to fetch data... done!'};
-		res.json(exampleMessage);
+        var fs = require('fs');
+        fs.readFile(FILE_PATH, 'utf8', function (err, data) {
+            if(err)
+                throw err;
+    		res.json(JSON.parse(data));
+        });
 	});
 
 app.use(router);

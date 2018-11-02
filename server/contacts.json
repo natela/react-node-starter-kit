@@ -1,0 +1,48 @@
+{
+    "data": {
+        "contactList": [
+            {
+                "name": "Gilbert Lysette",
+                "gender": "m",
+                "dateOfBirth": 411696000,
+                "email": "g.lysette@gmail.com",
+                "phoneNumber": "111-111-1111"
+            },
+            {
+                "name": "Idella Shaw",
+                "gender": "f",
+                "dateOfBirth": 720576000,
+                "email": "shawidella@gmail.com",
+                "phoneNumber": "222-222-2222"
+            },
+            {
+                "name": "Conor Berniece",
+                "gender": "m",
+                "dateOfBirth": -24105600,
+                "email": "conorb@gmail.com",
+                "phoneNumber": "333-333-3333"
+            },
+            {
+                "name": "Norbert Cooper",
+                "gender": "m",
+                "dateOfBirth": 580953600,
+                "email": "norbert.cooper@gmail.com",
+                "phoneNumber": "444-444-4444"
+            },
+            {
+                "name": "Tilda Reed",
+                "gender": "f",
+                "dateOfBirth": 905126400,
+                "email": "t.reed@gmail.com",
+                "phoneNumber": "555-555-5555"
+            },
+            {
+                "name": "Sabrina Ward",
+                "gender": "f",
+                "dateOfBirth": 549072000,
+                "email": "sabrina.ward@gmail.com",
+                "phoneNumber": "666-666-6666"
+            }
+        ]
+    }
+}
