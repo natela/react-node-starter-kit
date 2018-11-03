@@ -1,15 +1,13 @@
-# Description
+# Contacts Book: React + Redux coding challenge 
 
-This repo is intended as starter kit and boilerplate to quickly kick start a React (Redux) / NodeJS web application.
-The aim is to not be particularly prescriptive or opinionated but offer a simple and clean way to getting a React Redux front-end environment paired with a NodeJS / Express API backend.
+## Description
 
-It does not use the absolute latest technologies on the market, in part to a protest about the endless churn in the Web Dev community.
+* The screen is split into two views. Left view shows the list of all contacts, right view shows the details of a selected contact
+* User can click on any name on the list to select it
+* Avatar is based on gender
+* Implementing mobile version is a bonus, although not required. Design would be up to you.
 
-I make no claim that this is perfect or complete in any way - it just works, and offers a way for myself to get on with my projects in a straight-forward way with no unnecessary extras piled on.
-
-There are no tests yet - sorry! 
-
-# Usage
+## Setup
 
 `npm install`
 
@@ -18,7 +16,3 @@ There are no tests yet - sorry!
 `node server/index.js`
 
 Then navigate to `http://localhost:3000` which will serve files with `/dist/` as the root, via Express.
-
-The example app will make a call to `/api/example` when the button is clicked - simply to demo a basic end-to-end system working. 
-
-This project is basic, and not complete - it just helps to kick-start React Redux apps using a Node back-end. 
