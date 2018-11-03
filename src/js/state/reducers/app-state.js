@@ -1,25 +1,30 @@
-import {CONTACT_DETAILS} from '../actions';
+import {SELECT_CONTACT, UPDATE_CONTACTS} from '../actions';
 
 let initialState = initAppState();
 
 const appState = (state = initialState, action) => {
-    let newState;
     switch (action.type) {
-        case CONTACT_DETAILS:
-            newState = {
+        case SELECT_CONTACT:
+            return {
                 ...state,
-                details: action.details
-            };
-            break;
+                selectedContactIndex: action.index
+            }
+        case UPDATE_CONTACTS:
+            return {
+                contacts: [
+                    ...action.contacts
+                ],
+                selectedContactIndex: 0
+            }
         default:
-            newState = state;
+            return state;
     }
-    return newState;
 };
 
 function initAppState() {
     const emptyState = {
-        details: {}
+        contacts: [],
+        selectedContactIndex: 0
     };
 
     initialState = {
