@@ -1,3 +1,7 @@
+$border-color: #979797;
+$bg-color: #d8d8d8;
+$img-border: #a6a6a6;
+
 body {
     font-size: 20px;
     font-family: arial;
@@ -8,7 +12,6 @@ body {
     flex-wrap: wrap;
     align-items: stretch;
     align-content: stretch;
-    /*position: relative;*/
 }
 .left-col {
     width: 25%;
@@ -18,22 +21,16 @@ body {
     width: 75%;
 }
 .contacts {
-    border-right: 1px solid #b4b4b4;
-}
-span.menu-item {
-    display: none;
+    border-right: 1px solid $border-color;
 }
 .details {
     text-align: center;
     padding-top: 30px;
-    /*position: fixed;*/
-    /*right: 0;*/
-    /*top: 0;*/
 }
 .headline {
     text-align: center;
     font-size: 34px;
-    border-bottom: 1px solid #979797;
+    border-bottom: 1px solid $border-color;
     padding: 30px;
 }
 ul {
@@ -43,22 +40,25 @@ ul {
 }
 li {
     text-align: center;
-    border-bottom: 1px solid #979797;
+    border-bottom: 1px solid $border-color;
 }
-ul.contacts-list {
+.contacts-list > ul {
     margin: 0;
     padding: 0;
 }
-ul.contacts-list > li {
+.contacts-list > ul > li {
     padding: 30px 0;
-    width: 80%;
     margin: auto;
+    cursor: pointer;
 }
-ul.contacts-list > li.active {
+.contacts-list > ul > li > span {
+    width: 80%;
+}
+.contacts-list > ul > li.active {
     width: 100%;
-    border-top: 1px solid #979797;
+    border-top: 1px solid $border-color;
     margin-top: -1px;
-    background-color: #d8d8d8;
+    background-color: $bg-color;
 }
 ul.contact-details {
     width: 50%;
@@ -69,32 +69,48 @@ ul.contact-details > li {
 }
 .avatar {
     border-radius: 50%;
-    background-color: #d8d8d8;
-    border: 1px solid #a6a6a6;
+    background-color: $bg-color;
+    border: 1px solid $img-border;
     width: 100px;
     height: 100px;
     padding: 12px;
     display: inline-block;
 }
-.avatar img {
+.avatar > img {
     width: 100%;
 }
+.list-toggle {
+    display: none;
+}
+
 @media only screen and (max-width: 767px) {
-    .left-col {
+    .left-col, .right-col {
         width: 100%;
         min-height: auto;
+    }
+    ul.contact-details {
+        width: 80%;
     }
     .contacts {
         border: none;
     }
-    /*#contacts {
+    .contacts-list {
         display: none;
-    }*/
-    .right-col {
-        width: 100%;
     }
-    /*span.menu-item {
-        display: inline;
+    .list-toggle {
+        text-align: right;
+        display: block;
+        margin-top: 15px;
+        margin-right:30px;
+    }
+    .list-toggle span {
+        font-size: 34px;
         cursor: pointer;
-    }*/
+    }
+    .mobile.hidden {
+        display: none;
+    }
+    .mobile.shown {
+        display: block;
+    }
 }
